@@ -20,16 +20,16 @@ const Home = () => {
     useEffect(()=>{
         callGetAgents()
     },[])
-
-    console.log(agents)
   return (
     <SafeAreaView style={styles.container}>
-        <Text>teasdsa</Text>
-      <FlatList
+      {<FlatList
         data={agents}
-        renderItem={({}) => <Text>title=teste</Text>}
-        keyExtractor={item => item}
-      />
+        renderItem={({item}) => 
+        <View>
+        <Text>Nome:{item['displayName']}</Text>
+        <Text>Descrição:{item['description']}</Text>
+        </View>}
+      /> }
     </SafeAreaView>
   )
 }
