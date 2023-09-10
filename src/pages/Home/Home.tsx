@@ -1,41 +1,62 @@
-import { FlatList, SafeAreaView, StyleSheet, Text, View, Image, ImageProps } from 'react-native'
-import React, { useEffect, useState} from 'react'
-import { useGetData } from '../../hooks/useGetData'
-import { ListItem } from 'react-native-elements'
-import Card from '../Card/Card'
+import {
+  FlatList,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ImageProps,
+} from "react-native";
+import React, { useEffect, useState } from "react";
+import { useGetData } from "../../hooks/useGetData";
+import { ListItem } from "react-native-elements";
+import Card from "../Card/Card";
+import styles from "./styles";
 
 const Home = () => {
-    const {getAgents} = useGetData()
-    const [loading, setLoading] = useState(true)
-    const [agents, setAgents] = useState([])
-  
-    const callGetAgents = async() =>{
-        const agentsResponse = await getAgents()
+  const { getAgents } = useGetData();
+  const [loading, setLoading] = useState(true);
+  const [agents, setAgents] = useState([]);
 
-        if(!agentsResponse.error){
-          async() =>{
+  const callGetAgents = async () => {
+    const agentsResponse = await getAgents();
 
-          }
-            setAgents(agentsResponse)
-            setLoading(false)
-        }
+    if (!agentsResponse.error) {
+      async () => {};
+      setAgents(agentsResponse);
+      setLoading(false);
     }
+  };
 
-    useEffect(()=>{
-        callGetAgents()
-    },[])
-    
+  useEffect(() => {
+    callGetAgents();
+  }, []);
+  
   return (
     <SafeAreaView style={styles.container}>
-        <FlatList
-        data={agents}
-        renderItem={({item}) => 
-        <Card name={item['displayName']} IconImage={{uri:item['displayIcon']}} description={item['description']} RoleImage={{uri:item?.['role']?.['displayIcon']}} category={item?.['role']?.['displayName']}></Card>
+      <FlatList
+        ListHeaderComponent={
+          <View style={styles.header}>
+            <Text style={styles.title}>teste</Text>
+          </View>
         }
-      /> 
+        keyExtractor={(item) => item?.["uuid"]}
+        showsVerticalScrollIndicator={false}
+        numColumns={2}
+        data={agents}
+        renderItem={({ item }) => (
+          <Card
+            name={item["displayName"]}
+            IconImage={{ uri: item["fullPortraitV2"] }}
+            description={item["description"]}
+            RoleImage={{ uri: item?.["role"]?.["displayIcon"] }}
+            category={item?.["backgroundGradientColors[0]"]}
+          ></Card>
+        )}
+      />
     </SafeAreaView>
-  )
-}
+  );
+};
 export interface Agents {
   name: string;
   IconImage: ImageProps["source"];
@@ -44,24 +65,4 @@ export interface Agents {
   category: string;
 }
 
-export default Home
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-    },
-    item: {
-      backgroundColor: '#f9c2ff',
-      padding: 20,
-      marginVertical: 8,
-      marginHorizontal: 16,
-    },
-    title: {
-      fontSize: 32,
-    },
-    icon:{
-      width: 20,
-      height: 20,
-    }
-  });
-  
+export default Home;
