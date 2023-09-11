@@ -22,6 +22,21 @@ const styles = StyleSheet.create({
         fontSize: 42,
         color: '#fff'
       },
+      description: {
+        fontSize: 16,
+        color: "#000",
+      },
+      icone:{
+          width: 165,
+          height: 165,
+      },
+      titleCard:{
+          fontSize: 20,
+          fontWeight: "bold",
+          color: "#fff",
+          marginBottom: 16,
+          marginTop: 16,
+      },
   });
 
 export default styles;

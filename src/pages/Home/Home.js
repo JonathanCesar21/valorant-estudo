@@ -6,14 +6,19 @@ import {
   View,
   Image,
   ImageProps,
+  TouchableOpacity,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { useGetData } from "../../hooks/useGetData";
-import { ListItem } from "react-native-elements";
 import Card from "../Card/Card";
 import styles from "./styles";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import About from "../About/About";
 
-const Home = () => {
+const Stack = createNativeStackNavigator();
+
+const Home = ({navigation}) => {
   const { getAgents } = useGetData();
   const [loading, setLoading] = useState(true);
   const [agents, setAgents] = useState([]);
@@ -31,7 +36,7 @@ const Home = () => {
   useEffect(() => {
     callGetAgents();
   }, []);
-  
+
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
@@ -45,24 +50,20 @@ const Home = () => {
         numColumns={2}
         data={agents}
         renderItem={({ item }) => (
-          <Card
-            name={item["displayName"]}
-            IconImage={{ uri: item["fullPortraitV2"] }}
-            description={item["description"]}
-            RoleImage={{ uri: item?.["role"]?.["displayIcon"] }}
-            category={item?.["backgroundGradientColors[0]"]}
-          ></Card>
+          <TouchableOpacity onPress={() => navigation.navigate('About', {item})}>
+            <View style={styles.container}>
+              <Image
+                style={styles.icone}
+                source={{ uri: item?.["fullPortraitV2"] }}
+              />
+              <Text style={styles.titleCard}>{item?.["displayName"]}</Text>
+            </View>
+          </TouchableOpacity>
         )}
       />
     </SafeAreaView>
   );
 };
-export interface Agents {
-  name: string;
-  IconImage: ImageProps["source"];
-  RoleImage: ImageProps["source"];
-  description: string;
-  category: string;
-}
+
 
 export default Home;
