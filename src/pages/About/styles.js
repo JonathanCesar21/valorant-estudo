@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
       paddingVertical: 20,
     },
     title: {
-      fontSize: 52,
+      fontSize: 48,
       fontWeight: "bold",
       color: "#fff",
       letterSpacing: 7,
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
       fontSize: 16,
       color: "#fff",
       marginTop: 30,
+      marginBottom: 25,
     },
     containerImagemPrincipal:{
       alignItems: "center",
@@ -39,8 +40,28 @@ const styles = StyleSheet.create({
     iconeRole:{
       width: 45,
       height: 45,
-      marginTop:30,
+      marginTop:15,
       alignSelf: "flex-end",
+    },
+    iconeSkill:{
+      width: 65,
+      height: 65,
+    },
+    skillName:{
+      fontSize: 14,
+      fontWeight: '600',
+      color: '#fff',
+      alignSelf: "center",
+      textAlign: "center",
+    },
+    skillDescription:{
+      alignSelf: "center",
+      paddingLeft: 5,
+      color: '#fff'
+    },
+    containerSkills:{
+      marginTop: 15,
+      marginBottom: 15,
     },
     row:{
       flexDirection: "row",
@@ -75,7 +96,8 @@ const styles = StyleSheet.create({
     },
     col8:{
       width: "80%",
-      
+      justifyContent: 'center',
+
     },
     col9:{
       width: "90%",
