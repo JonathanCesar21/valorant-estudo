@@ -43,9 +43,17 @@ const styles = StyleSheet.create({
       marginTop:15,
       alignSelf: "flex-end",
     },
+    boxIconeSkill:{
+      backgroundColor: '#B2B8B211',
+      padding: 7,
+      marginLeft: 3,
+      marginRight: 3,
+      alignItems: "center",
+      borderRadius: 10,
+    },
     iconeSkill:{
-      width: 65,
-      height: 65,
+      width: 64,
+      height: 64,
     },
     skillName:{
       fontSize: 14,
@@ -54,9 +62,14 @@ const styles = StyleSheet.create({
       alignSelf: "center",
       textAlign: "center",
     },
+    skillDescriptionBox:{
+      marginTop: 20,
+      marginBottom: 20,
+    },
     skillDescription:{
       alignSelf: "center",
-      paddingLeft: 5,
+      textAlign: "center",
+      paddingLeft: 0,
       color: '#fff'
     },
     containerSkills:{
@@ -66,13 +79,19 @@ const styles = StyleSheet.create({
     row:{
       flexDirection: "row",
     },
+    rowCenter:{
+      flexDirection: "row",
+      justifyContent:"center",
+    },
     col1:{
       width: "10%",
       
     },
     col2:{
       width: "20%",
-      
+    },
+    col2_5:{
+      width: "25%",
     },
     col3:{
       width: "30%",
@@ -107,7 +126,6 @@ const styles = StyleSheet.create({
       width: "100%",
       
     },
-
   });
 
 export default styles;
