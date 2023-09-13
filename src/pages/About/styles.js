@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
       paddingVertical: 20,
     },
     title: {
+      marginLeft: -5,
       fontSize: 48,
       fontWeight: "bold",
       color: "#fff",
@@ -19,8 +20,14 @@ const styles = StyleSheet.create({
       fontSize: 24,
       fontWeight: "300",
       color: "#C9C9C9",
-      marginLeft: 7,
       
+    },
+    titleSkills:{
+      marginLeft: 5,
+      fontSize: 32,
+      fontWeight: "600",
+      color: "#fff",
+      marginBottom: 15,
     },
     description: {
       fontSize: 16,

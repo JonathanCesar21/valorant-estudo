@@ -6,6 +6,7 @@ import {
   View,
   Image,
   ImageProps,
+  ImageBackground,
   TouchableOpacity,
 } from "react-native";
 import React, { useEffect, useState } from "react";
@@ -52,10 +53,16 @@ const Home = ({ navigation }) => {
             onPress={() => navigation.navigate("About", { item })}
           >
             <View style={styles.container}>
-              <Image
-                style={styles.icone}
-                source={{ uri: item?.["fullPortraitV2"] }}
-              />
+              <ImageBackground
+                imageStyle={{ opacity: 0.5 }}
+                resizeMode="cover"
+                source={{ uri: item?.["background"] }}
+              >
+                <Image
+                  style={styles.icone}
+                  source={{ uri: item?.["fullPortraitV2"] }}
+                />
+              </ImageBackground>
               <Text style={styles.titleCard}>{item?.["displayName"]}</Text>
             </View>
           </TouchableOpacity>

@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
       },
       header:{
         marginTop:50,
+        alignItems: "center",
       },
       title:{
         fontSize: 42,
@@ -27,8 +28,8 @@ const styles = StyleSheet.create({
         color: "#000",
       },
       icone:{
-          width: 165,
-          height: 165,
+          width: 185,
+          height: 185,
       },
       titleCard:{
           fontSize: 20,

@@ -5,7 +5,7 @@ import {
   Image,
   ImageBackground,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity,
 } from "react-native";
 import { NavigationContainer, useRoute } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -15,12 +15,11 @@ import styles from "./styles";
 const Stack = createNativeStackNavigator();
 
 const About = () => {
-
-
-
   const route = useRoute();
   const { item } = route.params;
-  const [descricao, setDescricao] = useState('Selecione alguma habilidade para ver sua descrição');
+  const [descricao, setDescricao] = useState(
+    "Selecione alguma habilidade para ver sua descrição"
+  );
   const arrayDeItens = [
     { abilities: { description: item.abilities[0].description } },
     { abilities: { description: item.abilities[1].description } },
@@ -65,6 +64,11 @@ const About = () => {
         <View style={styles.row}>
           <View style={styles.col10}>
             <Text style={styles.description}>{item?.["description"]}</Text>
+          </View>
+        </View>
+        <View style={styles.row}>
+          <View style={styles.col10}>
+            <Text style={styles.titleSkills}>Habilidades</Text>
           </View>
         </View>
         <View style={styles.rowCenter}>
