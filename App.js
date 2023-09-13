@@ -6,13 +6,14 @@ import AboutAgents from './src/pages/AboutAgents/AboutAgents';
 import AboutWeapons from './src/pages/AboutWeapons/AboutWeapons';
 import Agents from './src/pages/Agents/Agents'
 import Weapons from './src/pages/Weapons/Weapons';
-
+import Home from './src/pages/Home/Home';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen options={{headerShown:false}} name="Home" component={Home} />
         <Stack.Screen options={{headerShown:false}} name="Weapons" component={Weapons} />
         <Stack.Screen options={{headerShown:false}} name="Agents" component={Agents} />
         <Stack.Screen options={{headerShown:false}} name="AboutAgents" component={AboutAgents} />

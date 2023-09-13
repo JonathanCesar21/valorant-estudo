@@ -4,8 +4,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         backgroundColor: '#0F1822',
-        borderColor: "red",
-        borderWidth: 2,
       },
       item: {
         backgroundColor: '#f9c2ff',
@@ -37,8 +35,6 @@ const styles = StyleSheet.create({
           marginTop: 16,
       },
       boxFlatList:{
-        borderColor: "red",
-        borderWidth: 2,
         alignItems: "center",
         justifyContent: "center",
         margin: 5,
