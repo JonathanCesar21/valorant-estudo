@@ -14,7 +14,7 @@ import styles from "./styles";
 
 const Stack = createNativeStackNavigator();
 
-const About = () => {
+const AboutAgents = () => {
   const route = useRoute();
   const { item } = route.params;
   const [descricao, setDescricao] = useState(
@@ -133,4 +133,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutAgents;

@@ -17,7 +17,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();
 
-const Home = ({ navigation }) => {
+const Agents = ({ navigation }) => {
   const { getAgents } = useGetData();
   const [loading, setLoading] = useState(true);
   const [agents, setAgents] = useState([]);
@@ -50,7 +50,7 @@ const Home = ({ navigation }) => {
         data={agents}
         renderItem={({ item }) => (
           <TouchableOpacity
-            onPress={() => navigation.navigate("About", { item })}
+            onPress={() => navigation.navigate("AboutAgents", { item })}
           >
             <View style={styles.container}>
               <ImageBackground
@@ -72,4 +72,4 @@ const Home = ({ navigation }) => {
   );
 };
 
-export default Home;
+export default Agents;
