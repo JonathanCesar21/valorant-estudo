@@ -39,11 +39,6 @@ const Weapons = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
             <FlatList
-                ListHeaderComponent={
-                    <View style={styles.header}>
-                        <Text style={styles.title}>Teste Alpha</Text>
-                    </View>
-                }
                 keyExtractor={(item) => item?.["uuid"]}
                 showsVerticalScrollIndicator={false}
                 numColumns={2}
@@ -53,12 +48,14 @@ const Weapons = ({ navigation }) => {
                         onPress={() => navigation.navigate("AboutWeapons", { item })}
                     >
                         <View style={styles.boxFlatList}>
-                            <Image
-                                resizeMode="contain"
-                                style={styles.icone}
-                                source={{ uri: item?.["displayIcon"] }}
-                            />
-                            <Text style={styles.titleCard}>{item?.["displayName"]}</Text>
+                            <View style={styles.cardWeapon}>
+                                <Image
+                                    resizeMode="contain"
+                                    style={styles.icone}
+                                    source={{ uri: item?.["displayIcon"] }}
+                                />
+                                <Text style={styles.titleCard}>{item?.["displayName"]}</Text>
+                            </View>
                         </View>
                     </TouchableOpacity>
                 )

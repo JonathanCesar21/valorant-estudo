@@ -26,7 +26,7 @@ const Agents = ({ navigation }) => {
     const agentsResponse = await getAgents();
 
     if (!agentsResponse.error) {
-      async () => {};
+      async () => { };
       setAgents(agentsResponse);
       setLoading(false);
     }
@@ -39,11 +39,6 @@ const Agents = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        ListHeaderComponent={
-          <View style={styles.header}>
-            <Text style={styles.title}>Teste Alpha</Text>
-          </View>
-        }
         keyExtractor={(item) => item?.["uuid"]}
         showsVerticalScrollIndicator={false}
         numColumns={2}
@@ -53,17 +48,19 @@ const Agents = ({ navigation }) => {
             onPress={() => navigation.navigate("AboutAgents", { item })}
           >
             <View style={styles.container}>
-              <ImageBackground
+              <View style={styles.cardAgente}>
+                <ImageBackground
                 imageStyle={{ opacity: 0.5 }}
                 resizeMode="cover"
-                source={{ uri: item?.["background"] }}
+                source={{ uri: item?.["background"]}}
               >
+                <Text style={styles.titleCard}>{item?.["displayName"]}</Text>
                 <Image
                   style={styles.icone}
                   source={{ uri: item?.["fullPortraitV2"] }}
                 />
               </ImageBackground>
-              <Text style={styles.titleCard}>{item?.["displayName"]}</Text>
+              </View>
             </View>
           </TouchableOpacity>
         )}

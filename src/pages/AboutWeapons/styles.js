@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     },
     imageWeapon: {
         width: 350,
-        height: 250,
+        height: 200,
     },
     iconeRole: {
         width: 45,
