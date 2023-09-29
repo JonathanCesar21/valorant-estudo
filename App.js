@@ -7,6 +7,7 @@ import AboutWeapons from './src/pages/AboutWeapons/AboutWeapons';
 import Agents from './src/pages/Agents/Agents'
 import Weapons from './src/pages/Weapons/Weapons';
 import Home from './src/pages/Home/Home';
+import VideoSkin from './src/pages/VideoSkins/VideoSkin';
 const Stack = createNativeStackNavigator();
 
 
@@ -19,6 +20,7 @@ export default function App() {
         <Stack.Screen options={{headerTintColor:'#fff', headerTitleAlign: 'center', title:"Agentes", headerStyle:{backgroundColor:'#0f1822'}}} name="Agents" component={Agents} />
         <Stack.Screen options={{headerTintColor:'#fff', headerTitleAlign: 'center', title:"", headerStyle:{backgroundColor:'#0f1822'}}} name="AboutAgents" component={AboutAgents} />
         <Stack.Screen options={{headerTintColor:'#fff', headerTitleAlign: 'center', title:"", headerStyle:{backgroundColor:'#0f1822'}}} name="AboutWeapons" component={AboutWeapons} />
+        <Stack.Screen options={{headerTintColor:'#fff', headerTitleAlign: 'center', title:"", headerStyle:{backgroundColor:'#0f1822'}}} name="VideoSkin" component={VideoSkin} />
       </Stack.Navigator>
     </NavigationContainer>
   );

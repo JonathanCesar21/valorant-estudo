@@ -14,9 +14,10 @@ import React, { useEffect, useState } from "react";
 import * as Progress from 'react-native-progress';
 import styles from "./styles";
 
+
 const Stack = createNativeStackNavigator();
 
-const AboutWeapons = () => {
+const AboutWeapons = ({navigation}) => {
     const route = useRoute();
     const { item } = route.params;
     const skins = item.skins
@@ -89,7 +90,7 @@ const AboutWeapons = () => {
                     keyExtractor={(item) => item.uuid}
                     renderItem={(item) => (
                         <TouchableOpacity
-                        // onPress={() => navigation.navigate("mp4Weapons", { item })}
+                        onPress={() => navigation.navigate("VideoSkin", { item })}
                         >
                             <View style={styles.boxFlatList}>
                                 <Image
