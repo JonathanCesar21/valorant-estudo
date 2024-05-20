@@ -9,10 +9,10 @@ const styles = StyleSheet.create({
         paddingVertical: 20,
     },
     title: {
-        fontSize: 48,
+        fontSize: 24,
         fontWeight: "bold",
         color: "#fff",
-        letterSpacing: 7,
+        textAlign: 'center'
 
     },
     subTitle: {

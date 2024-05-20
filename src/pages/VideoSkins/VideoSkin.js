@@ -29,7 +29,7 @@ const VideoSkin = () => {
     return (
         <View style={styles.container}>
             <View>
-                <Text style={styles.title}>{item.displayName}</Text>
+                <Text style={styles.title}>{item.item.displayName}</Text>
                 <Video 
                 ref={video}
                 style={styles.video}

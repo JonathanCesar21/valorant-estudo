@@ -17,6 +17,7 @@ import styles from "./styles";
 
 const Stack = createNativeStackNavigator();
 
+
 const AboutWeapons = ({navigation}) => {
     const route = useRoute();
     const { item } = route.params;
